@@ -16,7 +16,7 @@ const secondBook = {
 
 const BookList = () => {
   return (
-    <section className='booklist'>
+    <section className="booklist">
       <Book
         title={firstBook.title}
         img={firstBook.img}
@@ -34,7 +34,7 @@ const BookList = () => {
 const Book = (props) => {
   const { img, title, author } = props
   return (
-    <article className='book'>
+    <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author}</h4>
