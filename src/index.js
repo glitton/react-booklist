@@ -2,37 +2,34 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import "./index.css"
 
-const firstBook = {
-  author: "James Clear",
-  title: "Atomic Habits",
-  img: "./images/atomic-habits.jpeg",
-}
-
-const secondBook = {
-  author: "Colleen Hoover",
-  title: "It Starts With Us",
-  img: "./images/it-starts-with-us.jpg",
-}
+const books = [
+  {
+    author: "James Clear",
+    title: "Atomic Habits",
+    img: "./images/atomic-habits.jpeg",
+    id: 1,
+  },
+  {
+    author: "Colleen Hoover",
+    title: "It Starts With Us",
+    img: "./images/it-starts-with-us.jpg",
+    id: 2,
+  },
+]
 
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book
-        title={firstBook.title}
-        img={firstBook.img}
-        author={firstBook.author}
-      />
-      <Book
-        title={secondBook.title}
-        img={secondBook.img}
-        author={secondBook.author}
-      />
+      {books.map((book) => {
+        return <Book {...book} key={book.id} />
+      })}
     </section>
   )
 }
 
 const Book = (props) => {
   const { img, title, author } = props
+  console.log(props)
   return (
     <article className="book">
       <img src={img} alt={title} />
